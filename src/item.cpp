@@ -1478,78 +1478,17 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance, const
 
 		s << ".";
 	}
-	//display item's special description
-	std::string str;
-	if(item && !item->getSpecialDescription().empty())
-		str = item->getSpecialDescription();
-	else if(!it.description.empty() && lookDistance <= 1)
+
+	//display item's text description
+	if(!it.description.empty()){
+		std::string str;
 		str = it.description;
-
-	if(str.empty())
-		return s.str();
-
-	if(str.find("|PLAYERNAME|") != std::string::npos)
-	{
-		std::string tmp = "You";
-		if(item)
-		{
-			if(const Player* player = item->getHoldingPlayer())
-				tmp = player->getName();
-		}
-
-		replaceString(str, "|PLAYERNAME|", tmp);
+		if(!str.empty())
+			s << std::endl << str;
 	}
-
-	if(str.find("|TIME|") != std::string::npos || str.find("|DATE|") != std::string::npos || str.find(
-		"|DAY|") != std::string::npos || str.find("|MONTH|") != std::string::npos || str.find(
-		"|YEAR|") != std::string::npos || str.find("|HOUR|") != std::string::npos || str.find(
-		"|MINUTES|") != std::string::npos || str.find("|SECONDS|") != std::string::npos ||
-		str.find("|WEEKDAY|") != std::string::npos || str.find("|YEARDAY|") != std::string::npos)
-	{
-		time_t now = time(NULL);
-		tm* ts = localtime(&now);
-
-		std::stringstream ss;
-		ss << ts->tm_sec;
-		replaceString(str, "|SECONDS|", ss.str());
-
-		ss.str("");
-		ss << ts->tm_min;
-		replaceString(str, "|MINUTES|", ss.str());
-
-		ss.str("");
-		ss << ts->tm_hour;
-		replaceString(str, "|HOUR|", ss.str());
-
-		ss.str("");
-		ss << ts->tm_mday;
-		replaceString(str, "|DAY|", ss.str());
-
-		ss.str("");
-		ss << (ts->tm_mon + 1);
-		replaceString(str, "|MONTH|", ss.str());
-
-		ss.str("");
-		ss << (ts->tm_year + 1900);
-		replaceString(str, "|YEAR|", ss.str());
-
-		ss.str("");
-		ss << ts->tm_wday;
-		replaceString(str, "|WEEKDAY|", ss.str());
-
-		ss.str("");
-		ss << ts->tm_yday;
-		replaceString(str, "|YEARDAY|", ss.str());
-
-		ss.str("");
-		ss << ts->tm_hour << ":" << ts->tm_min << ":" << ts->tm_sec;
-		replaceString(str, "|TIME|", ss.str());
-
-		ss.str("");
-		replaceString(str, "|DATE|", formatDateEx(now));
-	}
+		
 	//display item's weight
-	if(lookDistance <= 0 && it.pickupable)
+	if(it.pickupable)
 	{
 		std::string tmp;
 		if(!item)
@@ -1560,8 +1499,8 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance, const
 		if(!tmp.empty())
 			s << std::endl << tmp;
 	}
+
 	//return full item look information
-	s << std::endl << str;
 	return s.str();
 }
 

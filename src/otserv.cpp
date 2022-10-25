@@ -581,11 +581,12 @@ void otserv(StringVec, ServiceManager* services)
 	}
 	else
 		ScriptManager::getInstance();
-
+	//Oct 25, 2022: Disabling mods
+	/*
 	std::clog << ">> Loading mods..." << std::endl;
 	if(!ScriptManager::getInstance()->loadMods())
 		startupErrorMessage();
-
+	*/
 	#ifdef __LOGIN_SERVER__
 	std::clog << ">> Loading game servers" << std::endl;
 	if(!GameServers::getInstance()->loadFromXml(true))
