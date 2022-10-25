@@ -2120,12 +2120,13 @@
 		<attribute key="shootType" value="fire" />
 		<attribute key="range" value="3" />
 	</item>
-	<item id="2188" article="a" name="wand of decay">
-		<attribute key="description" value="It is half-rotten itself and reeks terribly." />
-		<attribute key="weight" value="2300" />
-		<attribute key="weaponType" value="wand" />
-		<attribute key="shootType" value="death" />
-		<attribute key="range" value="3" />
+	<item id="2188" article="a" name="soulpiercer">
+		<attribute key="weight" value="4700" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="ammoType" value="bolt" />
+		<attribute key="range" value="8" />
+		<attribute key="hitChance" value="10" />
 	</item>
 	<item id="2189" article="a" name="wand of cosmic energy">
 		<attribute key="description" value="The energy of a radiant star is trapped inside its globe." />
@@ -14875,7 +14876,15 @@
 		<attribute key="hitChance" value="2" />
 		<attribute key="attack" value="3" />
 	</item>
-	<item id="8856" article="a" name="soulbleeder">
+	<item id="8856" article="a" name="rift bow">
+		<attribute key="weight" value="4100" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="ammoType" value="arrow" />
+		<attribute key="range" value="7" />
+		<attribute key="hitChance" value="3" />
+	</item>
+	<item id="11402" article="the" name="soulbleeder">
 		<attribute key="weight" value="4700" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="weaponType" value="distance" />
@@ -15277,10 +15286,10 @@
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="3" />
 	</item>
-	<item id="8931" article="a" name="flame blade">
+	<item id="8931" article="the" name="epiphany">
 		<attribute key="weight" value="6700" />
 		<attribute key="defense" value="30" />
-		<attribute key="attack" value="54" />
+		<attribute key="attack" value="50" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="3" />
 	</item>

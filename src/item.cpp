@@ -1422,7 +1422,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance, const
 				s << "You are too far away to read it";
 		}
 		else
-			s << "Nothing is written on it";
+			s << "You don't understand what is written on it";
 	}
 	else if(it.levelDoor && item && item->getActionId() >= (int32_t)it.levelDoor && item->getActionId()
 		<= ((int32_t)it.levelDoor + g_config.getNumber(ConfigManager::MAXIMUM_DOOR_LEVEL)))
@@ -1451,7 +1451,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance, const
 
 	if(dot)
 		s << ".";
-
+	//display item's vocation
 	if(it.wieldInfo)
 	{
 		s << std::endl << "It can only be wielded properly by ";
@@ -1478,28 +1478,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance, const
 
 		s << ".";
 	}
-
-	if(lookDistance <= 1 && it.pickupable)
-	{
-		std::string tmp;
-		if(!item)
-			tmp = getWeightDescription(it.weight, it.stackable && it.showCount, subType);
-		else
-			tmp = item->getWeightDescription();
-
-		if(!tmp.empty())
-			s << std::endl << tmp;
-	}
-	/*
-	if(it.abilities.elementType != COMBAT_NONE && it.decayTo > 0)
-	{
-		s << std::endl << "It is enchanted with " << getCombatName(it.abilities.elementType) << " (";
-		s << std::max((int32_t)0, int32_t((item ? item->getAttack() : it.attack) - it.abilities.elementDamage));
-		if(it.extraAttack || (item && item->getExtraAttack()))
-			s << " " << std::showpos << int32_t(item ? item->getExtraAttack() : it.extraAttack) << std::noshowpos;
-			s << " physical + " << it.abilities.elementDamage << " " << getCombatName(it.abilities.elementType) << " damage).";
-	}
-	*/
+	//display item's special description
 	std::string str;
 	if(item && !item->getSpecialDescription().empty())
 		str = item->getSpecialDescription();
@@ -1569,7 +1548,19 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance, const
 		ss.str("");
 		replaceString(str, "|DATE|", formatDateEx(now));
 	}
+	//display item's weight
+	if(lookDistance <= 0 && it.pickupable)
+	{
+		std::string tmp;
+		if(!item)
+			tmp = getWeightDescription(it.weight, it.stackable && it.showCount, subType);
+		else
+			tmp = item->getWeightDescription();
 
+		if(!tmp.empty())
+			s << std::endl << tmp;
+	}
+	//return full item look information
 	s << std::endl << str;
 	return s.str();
 }
