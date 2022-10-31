@@ -127,11 +127,13 @@ void MonsterType::dropLoot(Container* corpse)
 		return;
 
 	std::stringstream ss;
-	ss << "Loot of " << nameDescription << ": " << corpse->getContentDescription() << ".";
-	if(owner->getParty() && message > LOOTMSG_PLAYER)
-		owner->getParty()->broadcastMessage((MessageClasses)g_config.getNumber(ConfigManager::LOOT_MESSAGE_TYPE), ss.str());
-	else if(message == LOOTMSG_PLAYER || message == LOOTMSG_BOTH)
-		owner->sendTextMessage((MessageClasses)g_config.getNumber(ConfigManager::LOOT_MESSAGE_TYPE), ss.str());
+    ss << "Loot of " << nameDescription << ": " << corpse->getContentDescription() << ".";
+    if(owner->getParty()){
+    	owner->getParty()->broadcastPartyLoot(ss.str());
+    }
+    else{
+    	owner->sendChannelMessage("", ss.str(), SPEAK_CHANNEL_Y, uint16_t (12)); // 12 is number for loot channel
+    }
 }
 
 Item* MonsterType::createLoot(const LootBlock& lootBlock)

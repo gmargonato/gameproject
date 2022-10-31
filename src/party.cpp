@@ -277,6 +277,18 @@ void Party::broadcastMessage(MessageClasses messageClass, const std::string& tex
 		(*it)->sendTextMessage(messageClass, text);
 }
 
+void Party::broadcastPartyLoot(const std::string& loot)
+{
+
+    PlayerVector::iterator it;
+    leader->sendChannelMessage("", loot, SPEAK_CHANNEL_Y, 12); // 12 is number for loot channel
+    if(!memberList.empty())
+    {
+        for(it = memberList.begin(); it != memberList.end(); ++it)
+        (*it)-> sendChannelMessage("", loot, SPEAK_CHANNEL_Y, 12);
+    }
+}
+
 void Party::updateSharedExperience()
 {
 	if(!sharedExpActive)

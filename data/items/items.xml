@@ -3892,10 +3892,10 @@
 		<attribute key="defense" value="25" />
 		<attribute key="weaponType" value="shield" />
 	</item>
-	<item id="2541" article="a" name="bone shield">
+	<item id="2541" article="a" name="cobra hood">
 		<attribute key="weight" value="5500" />
-		<attribute key="defense" value="20" />
-		<attribute key="weaponType" value="shield" />
+		<attribute key="armor" value="10" />
+		<attribute key="slotType" value="head" />
 	</item>
 	<item id="2542" article="a" name="tempest shield">
 		<attribute key="weight" value="5100" />
@@ -7801,9 +7801,8 @@
 		<attribute key="description" value="it is full." />
 		<attribute key="weight" value="800" />
 	</item>
-	<item id="4865" article="a" name="butterfly conservation kit">
-		<attribute key="description" value="it is empty." />
-		<attribute key="weight" value="700" />
+	<item id="4865" article="a" name="container">
+		<attribute key="weight" 	value="1000" />
 	</item>
 	<item id="4866" article="a" name="butterfly conservation kit">
 		<attribute key="description" value="contains a red butterfly." />
@@ -15559,8 +15558,7 @@
 		<attribute key="weight" value="500" />
 	</item>
 	<item id="8980" article="the" name="mexcalibur">
-		<attribute key="description" value="Your name is carved on this mighty sword." />
-		<attribute key="weight" value="1200" />
+		<attribute key="weight" 	value="1200" />
 	</item>
 	<item id="8981" />
 	<item id="8982" article="a" name="norseman doll">
@@ -16654,12 +16652,18 @@
 		<attribute key="description" value="It's like a glove and you can't wear a ring on it. You are not sure if you should really put it on." />
 		<attribute key="weight" value="500" />
 	</item>
-	<item id="10316" article="a" name="mighty helm of green sparks">
-		<attribute key="description" value="This helmet spawns green stars. Awesome." />
-		<attribute key="weight" value="4600" />
-		<attribute key="armor" value="6" />
+	<item id="10313" article="a" name="mighty weapon">
+		<attribute key="description" value="Tier: 4" />
+		<attribute key="weight" value="1000" />
+		<attribute key="slotType" value="body" />
+	</item>
+	<item id="10316" article="a" name="mighty helmet">
+		<attribute key="description" value="Tier: 1" />
+		<attribute key="weight" value="1000" />
+		<attribute key="armor" value="1" />
 		<attribute key="slotType" value="head" />
 	</item>
+
 	<item fromid="10325" toid="10340" article="a" name="roof" />
 	<item id="10344" article="a" name="stone ledge" />
 	<item fromid="10345" toid="10346" article="a" name="pillar" />
@@ -17770,6 +17774,39 @@
 		<attribute key="weight" value="150"/>
 		<attribute key="slotType" value="necklace"/>
 	</item>
+
+	<!-- Exercise Weapons -->
+	<item id="12559" article="a" name="exercise weapon">
+		<attribute key="description" value="You can use it on a target dummy to train your magic level skill." />
+		<attribute key="weight" 	value="1000" />
+		<attribute key="charges" 	value="100"  />
+		<attribute key="showcharges" 	value="1"    />
+	</item>
+	<item id="12560" article="a" name="exercise weapon">
+		<attribute key="description" value="You can use it on a target dummy to train your sword fighting skill." />
+		<attribute key="weight" 	value="1000" />
+		<attribute key="charges" 	value="100"  />
+		<attribute key="showcharges" 	value="1"    />
+	</item>	
+	<item id="12561" article="a" name="exercise weapon">
+		<attribute key="description" value="You can use it on a target dummy to train your club fighting skill." />
+		<attribute key="weight" 	value="1000" />
+		<attribute key="charges" 	value="100"  />
+		<attribute key="showcharges" 	value="1"    />
+	</item>	
+	<item id="12562" article="a" name="exercise weapon">
+		<attribute key="description" value="You can use it on a target dummy to train your distance fighting skill." />
+		<attribute key="weight" 	value="1000" />
+		<attribute key="charges" 	value="100"  />
+		<attribute key="showcharges" 	value="1"    />
+	</item>	
+	<item id="12563" article="a" name="exercise weapon">
+		<attribute key="description" value="You can use it on a target dummy to train your axe fighting skill." />
+		<attribute key="weight" 	value="1000" />
+		<attribute key="charges" 	value="100"  />
+		<attribute key="showcharges" 	value="1"    />
+	</item>
+
 	<item id="20001" name="water" />
 	<item id="20002" name="blood" />
 	<item id="20003" name="beer" />

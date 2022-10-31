@@ -3,31 +3,21 @@
 	<action default="yes" event="script" value="default.lua"/>
 
 	<!-- Quests -->
-	<action actionid="2000" event="script" value="quests/system.lua"/>
-	<action actionid="2001" event="script" value="quests/system.lua"/>
-	<action uniqueid="30015" event="script" value="quests/annihilator.lua"/>
+	<action actionid="1001" event="script" value="other/create_monster.lua"/>
 
-	<!-- Weapons enchanting (Gems) -->
-	<action itemid="2146" event="script" value="other/enchanting.lua"/>
-	<action itemid="2147" event="script" value="other/enchanting.lua"/>
-	<action itemid="2150" event="script" value="other/enchanting.lua"/>
-	<action itemid="2149" event="script" value="other/enchanting.lua"/>
-	<action itemid="7759" event="script" value="other/enchanting.lua"/>
-	<action itemid="7760" event="script" value="other/enchanting.lua"/>
-	<action itemid="7761" event="script" value="other/enchanting.lua"/>
-	<action itemid="7762" event="script" value="other/enchanting.lua"/>
+	<action uniqueid="5001" event="script" value="quests/annihilator.lua"/>
 
 	<!-- Tools -->
-	<action itemid="2420" event="script" value="tools/machete.lua"/>
-	<action itemid="2442" event="script" value="tools/machete.lua"/>
-	<action itemid="2550" event="script" value="tools/scythe.lua"/>
-	<action itemid="2580" event="script" value="tools/fishing.lua" allowfaruse="1"/>
-	<action itemid="10223" event="script" value="tools/fishing.lua" allowfaruse="1"/>
-	<action itemid="2554" event="script" value="tools/shovel.lua"/>
-	<action itemid="5710" event="script" value="tools/shovel.lua"/>
-	<action itemid="2120" event="script" value="tools/rope.lua"/>
-	<action itemid="7731" event="script" value="tools/rope.lua"/>
-	<action itemid="2553" event="script" value="tools/pick.lua"/>
+	<action itemid="2420" 	event="script" value="tools/machete.lua"/>
+	<action itemid="2442" 	event="script" value="tools/machete.lua"/>
+	<action itemid="2550" 	event="script" value="tools/scythe.lua"/>
+	<action itemid="2580" 	event="script" value="tools/fishing.lua" allowfaruse="1"/>
+	<action itemid="10223" 	event="script" value="tools/fishing.lua" allowfaruse="1"/>
+	<action itemid="2554" 	event="script" value="tools/shovel.lua"/>
+	<action itemid="5710" 	event="script" value="tools/shovel.lua"/>
+	<action itemid="2120" 	event="script" value="tools/rope.lua"/>
+	<action itemid="7731" 	event="script" value="tools/rope.lua"/>
+	<action itemid="2553" 	event="script" value="tools/pick.lua"/>
 	<action itemid="5908;5942" event="script" value="tools/skinning.lua"/>
 
 	<!-- Liquids -->
@@ -240,10 +230,10 @@
 	<action itemid="11000" event="function" value="decreaseItemId"/>
 
 	<!-- Spellbooks -->
-	<action itemid="2175" event="script" value="other/spellbook.lua"/>
-	<action itemid="6120" event="script" value="other/spellbook.lua"/>
+	<action itemid="2175" 		  event="script" value="other/spellbook.lua"/>
+	<action itemid="6120" 		  event="script" value="other/spellbook.lua"/>
 	<action fromid="8900" toid="8904" event="script" value="other/spellbook.lua"/>
-	<action itemid="8918" event="script" value="other/spellbook.lua"/>
+	<action itemid="8918" 		  event="script" value="other/spellbook.lua"/>
 
 	<!-- Change gold -->
 	<action itemid="2148" event="script" value="other/changegold.lua"/>
@@ -255,11 +245,11 @@
 	<action fromid="5086" toid="5088" event="script" value="other/constructionkits.lua"/>
 	<action fromid="6114" toid="6115" event="script" value="other/constructionkits.lua"/>
 	<action fromid="6372" toid="6373" event="script" value="other/constructionkits.lua"/>
-	<action itemid="7700" event="script" value="other/constructionkits.lua"/>
-	<action itemid="7503" event="script" value="other/constructionkits.lua"/>
+	<action itemid="7700" 		  event="script" value="other/constructionkits.lua"/>
+	<action itemid="7503" 		  event="script" value="other/constructionkits.lua"/>
 	<action fromid="7960" toid="7962" event="script" value="other/constructionkits.lua"/>
 	<action fromid="8692" toid="8693" event="script" value="other/constructionkits.lua"/>
-	<!-- <action itemid="9974" event="script" value="other/constructionkits.lua"/> - Dupplicate, please check it -->
+	<!-- <action itemid="9974" 	  event="script" value="other/constructionkits.lua"/> - Dupplicate, please check it -->
 
 	<!-- Bed construction kits -->
 	<action fromid="7904" toid="7907" event="script" value="other/furniturebeds.lua"/>
@@ -370,4 +360,7 @@
 	<action itemid="7735" event="script" value="other/spellwand.lua"/>
 	<action itemid="7537" script="other/spideregg.lua" />
 	<action itemid="384" event="script" value="other/climb_rope_spot.lua"/>
+
+	<!-- Exercise Weapons -->
+	<action fromid="12559" toid="12563" event="script" value="other/online_training.lua"/>
 </actions>

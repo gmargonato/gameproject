@@ -862,4 +862,5 @@
 	<movevent type="Equip" itemid="7880" slot="hand" event="function" value="onEquipItem"/>
 	<movevent type="DeEquip" itemid="7880" slot="hand" event="function" value="onDeEquipItem"/>
 	
+
 </movements>
