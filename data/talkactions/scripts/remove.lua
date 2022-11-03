@@ -21,7 +21,7 @@ function onSay(cid, words, param, channel)
 			doRemoveItem(tmp.uid, math.min(math.max(1, tmp.type), amount))
 		end
 
-		doSendMagicEffect(toPos, CONST_ME_MAGIC_RED)
+		doSendMagicEffect(toPos, 2)
 		return true
 	end
 

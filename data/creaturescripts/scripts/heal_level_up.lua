@@ -6,7 +6,6 @@ local cfg = {
 
 function onAdvance(cid, skill, oldLevel, newLevel)
 	if (getPlayerLevel(cid) > 1) then
-		--heal player to full health
 		doCreatureAddHealth(cid, getCreatureMaxHealth(cid))
 		doCreatureAddMana(cid, getCreatureMaxMana(cid))
 	end

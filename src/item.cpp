@@ -839,7 +839,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance, const
 					s << std::max((int32_t)0, int32_t((item ? item->getAttack() : it.attack) - it.abilities.elementDamage));
 					if(it.extraAttack || (item && item->getExtraAttack()))
 						s << " " << std::showpos << int32_t(item ? item->getExtraAttack() : it.extraAttack) << std::noshowpos;
-						s << " + " << it.abilities.elementDamage << " " << getCombatName(it.abilities.elementType);
+						s << " physical + " << it.abilities.elementDamage << " " << getCombatName(it.abilities.elementType);
 				}
 				else
 				{
@@ -1128,7 +1128,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance, const
 		bool begin = true;
 		if(tmp)
 		{
-			s << " (Arm:" << tmp;
+			s << " (Arm: " << tmp;
 			begin = false;
 		}
 

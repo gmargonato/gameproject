@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <quests>
-	<quest name="Example Quest I" startstorageid="30031" startstoragevalue="1">
+	<quest name="Example Quest I" startstorageid="10001" startstoragevalue="1">
 		<mission name="The head of Kiper" storageid="1001" startvalue="1" endvalue="3">
 			<missionstate id="1" description="Kill Kiper!"/>
 			<missionstate id="2" description="Give his head to Talaturen!"/>

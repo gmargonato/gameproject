@@ -95,7 +95,7 @@ bool ProtocolGame::login(const std::string& name, uint32_t id, const std::string
 	if(!players.empty())
 		_player = players[random_range(0, (players.size() - 1))];
 
-	if((!_player || name == "Account Manager" || g_config.getNumber(ConfigManager::ALLOW_CLONES) > (int32_t)players.size()) && !castAccount)
+	if((!_player || name == "New Soul" || g_config.getNumber(ConfigManager::ALLOW_CLONES) > (int32_t)players.size()) && !castAccount)
 	{
 		isCast = false;
 		player = new Player(name, this);
@@ -136,7 +136,7 @@ bool ProtocolGame::login(const std::string& name, uint32_t id, const std::string
 		{
 			if(g_config.getBool(ConfigManager::NAMELOCK_MANAGER))
 			{
-				player->name = "Account Manager";
+				player->name = "New Soul";
 				player->accountManager = MANAGER_NAMELOCK;
 
 				player->managerNumber = id;
@@ -148,7 +148,7 @@ bool ProtocolGame::login(const std::string& name, uint32_t id, const std::string
 				return false;
 			}
 		}
-		else if(player->getName() == "Account Manager" && g_config.getBool(ConfigManager::ACCOUNT_MANAGER))
+		else if(player->getName() == "New Soul" && g_config.getBool(ConfigManager::ACCOUNT_MANAGER))
 		{
 			if(id != 1)
 			{

@@ -113,7 +113,7 @@ bool ScriptManager::loadSystem()
 
 	return true;
 }
-
+/*
 bool ScriptManager::loadMods()
 {
 	boost::filesystem::path modsPath(getFilePath(FILE_TYPE_MOD));
@@ -170,7 +170,7 @@ bool ScriptManager::reloadMods()
 	clearMods();
 	return loadMods();
 }
-
+*/
 bool ScriptManager::loadFromXml(const std::string& file, bool& enabled)
 {
 	enabled = false;

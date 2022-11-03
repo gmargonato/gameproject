@@ -6,12 +6,11 @@
 	<talkaction log="yes" words="/serverdiag" access="5" event="function" value="diagnostics"/>
 	<talkaction log="yes" words="/closeserver" access="5" event="script" value="closeopen.lua"/>
 	<talkaction log="yes" words="/openserver" access="5" event="script" value="closeopen.lua"/>
-	<talkaction log="yes" words="/promote;/demote" access="5" event="script" value="promote.lua"/>
 	<talkaction log="yes" words="/shutdown" access="5" event="script" value="shutdown.lua"/>
 	<talkaction log="yes" words="/mode" access="5" event="script" value="mode.lua"/>
 	<talkaction log="yes" words="/s" access="4" event="script" value="summon.lua"/>
-	<talkaction log="yes" words="/n" access="4" event="script" value="creature.lua"/>
-	<talkaction log="yes" words="/m" access="4" event="script" value="creature.lua"/>
+	<talkaction log="yes" words="/npc" access="4" event="script" value="create_npc.lua"/>
+	<talkaction log="yes" words="/m" access="4" event="script" value="create_mob.lua"/>
 	<talkaction log="yes" words="/reload" access="4" event="script" value="reload.lua"/>
 	<talkaction log="yes" words="/raid" access="4" event="script" value="raid.lua"/>
 	<talkaction log="yes" words="/looktype;/o" access="4" event="script" value="newtype.lua"/>
@@ -20,17 +19,16 @@
 	<talkaction log="yes" words="/storage" access="4" event="script" value="storage.lua"/>
 	<talkaction log="yes" words="/config" access="4" event="script" value="configinfo.lua"/>
 	<talkaction log="yes" words="/i" access="4" event="script" value="createitem.lua"/>
-	<talkaction words="/z" access="4" event="script" value="magiceffect.lua"/>
-	<talkaction words="/x" access="4" event="script" value="animationeffect.lua"/>
-	<talkaction words="/y" access="4" event="script" value="animatedtext.lua"/>
+	<talkaction 	      words="/z" access="4" event="script" value="magiceffect.lua"/>
+	<talkaction 	      words="/x" access="4" event="script" value="animationeffect.lua"/>
+	<talkaction 	      words="/y" access="4" event="script" value="animatedtext.lua"/>
 	<talkaction log="yes" words="/bc" access="4" event="script" value="broadcastclass.lua"/>
-	<talkaction log="yes" access="4" words="/mkick" event="script" value="masskick.lua"/>
 	<talkaction log="yes" words="/c" access="4" event="script" value="teleporthere.lua"/>
 	<talkaction log="yes" words="/save" access="4" event="script" value="save.lua"/>
 
 	<!-- Gamemasters -->
 	<talkaction log="yes" words="/ghost" access="3" event="function" value="ghost"/>
-	<talkaction log="yes" words="/squelch" access="3" event="script" value="gamemaster.lua"/>
+	<talkaction log="yes" words="/ignorepvt" access="3" event="script" value="gamemaster.lua"/>
 	<talkaction log="yes" words="/cliport" access="3" event="script" value="gamemaster.lua"/>
 	<talkaction log="yes" words="/t" access="3" event="script" value="teleporttown.lua"/>
 	<talkaction log="yes" words="/goto" access="3" event="script" value="teleportto.lua"/>
@@ -41,7 +39,7 @@
 	<talkaction log="yes" words="/town" access="3" event="script" value="teleporttown.lua"/>
 	<talkaction log="yes" words="/up" access="3" event="script" value="teleportfloor.lua"/>
 	<talkaction log="yes" words="/down" access="3" event="script" value="teleportfloor.lua"/>
-	<talkaction log="yes" words="/clean" access="3" event="script" value="clean.lua"/>
+	<talkaction log="yes" words="/clear" access="3" event="script" value="clean.lua"/>
 	<talkaction log="yes" words="/reports" access="3" event="script" value="reports.lua"/>
 	<talkaction log="yes" words="/wp" access="3" event="script" value="waypoints.lua"/>
 
@@ -54,10 +52,9 @@
 	<talkaction log="yes" words="/pos;!pos" access="1" event="script" value="position.lua"/>
 
 	<!-- Players -->
-	<talkaction words="/online" event="script" value="online.lua"/>
-	<talkaction words="/uptime" event="script" value="uptime.lua"/>
+	<talkaction words="/online" 	event="script" value="online.lua"/>
 	<talkaction words="/serverinfo" event="script" value="serverinfo.lua"/>
-	<talkaction words="/commands" event="script" value="commands.lua"/>
+	<talkaction words="/commands" 	event="script" value="commands.lua"/>
 
 
 	<!-- Houses -->

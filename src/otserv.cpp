@@ -581,7 +581,6 @@ void otserv(StringVec, ServiceManager* services)
 	}
 	else
 		ScriptManager::getInstance();
-	//Oct 25, 2022: Disabling mods
 	/*
 	std::clog << ">> Loading mods..." << std::endl;
 	if(!ScriptManager::getInstance()->loadMods())

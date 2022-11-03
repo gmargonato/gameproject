@@ -42,13 +42,13 @@ class ScriptManager
 		}
 
 		ScriptManager();
-		virtual ~ScriptManager() {clearMods();}
+		//virtual ~ScriptManager() {clearMods();}
 
 		bool loadSystem();
-		bool loadMods();
+		//bool loadMods();
 
-		void clearMods();
-		bool reloadMods();
+		//void clearMods();
+		//bool reloadMods();
 
 		inline LibMap::iterator getFirstLib() {return libMap.begin();}
 		inline LibMap::iterator getLastLib() {return libMap.end();}

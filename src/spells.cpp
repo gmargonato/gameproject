@@ -455,6 +455,8 @@ Spell::Spell()
 {
 	level = 0;
 	magLevel = 0;
+	life = 0;
+	lifePercent = 0;
 	mana = 0;
 	manaPercent = 0;
 	soul = 0;
@@ -506,6 +508,12 @@ bool Spell::configureSpell(xmlNodePtr p)
 
 	if(readXMLInteger(p, "maglv", intValue) || readXMLInteger(p, "magiclevel", intValue))
 	 	magLevel = intValue;
+
+	if(readXMLInteger(p, "life", intValue))
+	 	life = intValue;
+
+	if(readXMLInteger(p, "lifepercent", intValue))
+	 	lifePercent = intValue;
 
 	if(readXMLInteger(p, "mana", intValue))
 	 	mana = intValue;
@@ -624,6 +632,13 @@ bool Spell::checkSpell(Player* player) const
 	if((int32_t)player->getMagicLevel() < magLevel)
 	{
 		player->sendCancelMessage(RET_NOTENOUGHMAGICLEVEL);
+		g_game.addMagicEffect(player->getPosition(), MAGIC_EFFECT_POFF);
+		return false;
+	}
+
+	if(player->getHealth() == 1)
+	{
+		player->sendCancel("You do not have enough life.");
 		g_game.addMagicEffect(player->getPosition(), MAGIC_EFFECT_POFF);
 		return false;
 	}
@@ -944,10 +959,10 @@ void Spell::postSpell(Player* player, bool finishedCast /*= true*/, bool payCost
 	}
 
 	if(payCost)
-		postSpell(player, (uint32_t)getManaCost(player), (uint32_t)getSoulCost());
+		postSpell(player, (uint32_t)getLifeCost(player), (uint32_t)getManaCost(player), (uint32_t)getSoulCost());
 }
 
-void Spell::postSpell(Player* player, uint32_t manaCost, uint32_t soulCost) const
+void Spell::postSpell(Player* player, uint32_t LifeCost, uint32_t manaCost, uint32_t soulCost) const
 {
 	if(manaCost > 0)
 	{
@@ -957,8 +972,39 @@ void Spell::postSpell(Player* player, uint32_t manaCost, uint32_t soulCost) cons
 			player->addManaSpent(manaCost);
 	}
 
+	if(LifeCost > 0)
+	{
+
+		int32_t playerMaxHealth;
+		playerMaxHealth = player->getHealth();
+
+		int32_t finalLifeCost;
+		finalLifeCost = ((double)LifeCost / 100) * playerMaxHealth;
+		
+		//subtract the finalLifeCost from player's current health
+		if(!player->hasCustomFlag(PlayerCustomFlag_GamemasterPrivileges))
+			player->changeHealth(-finalLifeCost);
+
+		//blood effect	
+		g_game.addMagicEffect(player->getPosition(), MAGIC_EFFECT_DRAW_BLOOD);
+
+		//message in the bottom of screen with life cost
+		std::stringstream s;
+		s.str("");
+		s << "The spell consumed " << finalLifeCost << " of " << playerMaxHealth << " available life points.";
+		player->sendTextMessage(MSG_EVENT_DEFAULT, s.str().c_str());
+	}
+
 	if(soulCost > 0)
 		player->changeSoul(-(int32_t)soulCost);
+}
+
+int32_t Spell::getLifeCost(const Player* player) const
+{
+	if(player && lifePercent)
+		return (int32_t)std::floor(double(player->getMaxHealth() * lifePercent) / 100);
+
+	return life;
 }
 
 int32_t Spell::getManaCost(const Player* player) const

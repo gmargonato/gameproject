@@ -20,7 +20,7 @@
 
 #define CLIENT_VERSION_MIN 860
 #define CLIENT_VERSION_MAX 860
-#define CLIENT_VERSION_STRING "Only clients with protocol 8.6 allowed!"
+#define CLIENT_VERSION_STRING "Please download out custom client!"
 
 #define SOFTWARE_NAME "The Forgotten Server"
 #define SOFTWARE_VERSION "0.4"

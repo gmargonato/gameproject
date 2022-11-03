@@ -214,7 +214,7 @@ bool ProtocolLogin::parseFirstPacket(NetworkMessage& msg)
 	    else if(g_config.getBool(ConfigManager::ACCOUNT_MANAGER) && id != 1)
 		{
 			output->put<char>(account.charList.size() + 1);
-			output->putString("Account Manager");
+			output->putString("New Soul");
 			output->putString(g_config.getString(ConfigManager::SERVER_NAME));
 			output->put<uint32_t>(serverIp);
 			output->put<uint16_t>(g_config.getNumber(ConfigManager::GAME_PORT));
@@ -236,7 +236,7 @@ bool ProtocolLogin::parseFirstPacket(NetworkMessage& msg)
 						output->putString("Offline");
 				}
 				else
-					output->putString(g_config.getString(ConfigManager::SERVER_NAME));
+					output->putString(g_config.getString(ConfigManager::SERVER_NAME));			
 
 				output->put<uint32_t>(serverIp);
 				output->put<uint16_t>(g_config.getNumber(ConfigManager::GAME_PORT));

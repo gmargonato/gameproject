@@ -119,12 +119,15 @@ class Spell : public BaseSpell
 		const std::string& getName() const {return name;}
 
 		void postSpell(Player* player, bool isFinished = true, bool payCost = true) const;
-		void postSpell(Player* player, uint32_t manaCost, uint32_t soulCost) const;
+		void postSpell(Player* player, uint32_t LifeCost, uint32_t manaCost, uint32_t soulCost) const;
 
+		int32_t getLifeCost(const Player* player) const;
 		int32_t getManaCost(const Player* player) const;
 		int32_t getSoulCost() const {return soul;}
 		uint32_t getLevel() const {return level;}
 		int32_t getMagicLevel() const {return magLevel;}
+		int32_t getLife() const {return life;}
+		int32_t getLifePercent() const {return lifePercent;}
 		int32_t getMana() const {return mana;}
 		int32_t getManaPercent() const {return manaPercent;}
 		uint32_t getExhaustion() const {return exhaustion;}
@@ -150,6 +153,8 @@ class Spell : public BaseSpell
 		bool learnable;
 		bool enabled;
 
+		int32_t life;
+		int32_t lifePercent;
 		int32_t mana;
 		int32_t manaPercent;
 		int32_t soul;

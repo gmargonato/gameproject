@@ -9,5 +9,6 @@
 	<event type="think" name="SkullCheck" event="script" value="skullcheck.lua"/>
 	<event type="moveitem" name="MoveItem" event="script" value="houseprotect.lua"/>
 	<event type="extendedopcode" name="ExtendedOpcode" event="script" value="extendedopcode.lua"/>
-	<event type="advance" name="healonlevelup" event="script" value="heal_level_up.lua"/>
+	<!--<event type="advance" name="healonlevelup" event="script" value="heal_level_up.lua"/>-->
+
 </creaturescripts>

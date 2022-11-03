@@ -3,6 +3,13 @@ local config = {
 	useFragHandler = getBooleanFromString(getConfigValue('useFragHandler'))
 }
 
+local outfits = {
+        [1] = {lookType = 138, 	lookHead = 114 , lookBody = 18, lookLegs = 94, lookFeet = 0, lookTypeEx = 0, lookAddons = 0},
+        [2] = {lookType = 148, 	lookHead = 114 , lookBody = 18, lookLegs = 94, lookFeet = 0, lookTypeEx = 0, lookAddons = 0},
+        [3] = {lookType = 137, 	lookHead = 114 , lookBody = 18, lookLegs = 94, lookFeet = 0, lookTypeEx = 0, lookAddons = 0},
+        [4] = {lookType = 147, 	lookHead = 114 , lookBody = 18, lookLegs = 94, lookFeet = 0, lookTypeEx = 0, lookAddons = 0},
+}
+
 function onLogin(cid)
 	local loss = getConfigValue('deathLostPercent')
 	if(loss ~= nil and getPlayerStorageValue(cid, "bless") ~= 5) then
@@ -26,8 +33,9 @@ function onLogin(cid)
 		else
 			str = str .. " Please choose your outfit."
 			doPlayerSendOutfitWindow(cid)
+			--doSetCreatureOutfit(cid, outfits[getPlayerVocation(cid)])
 		end
-
+		doPlayerOpenChannel(cid, 12)
 		doPlayerSendTextMessage(cid, MESSAGE_STATUS_DEFAULT, str)
 	elseif(accountManager == MANAGER_NAMELOCK) then
 		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_ORANGE, "Hello, it appears that your character has been namelocked, what would you like as your new name?")
@@ -40,7 +48,7 @@ function onLogin(cid)
 	if(not isPlayerGhost(cid)) then
 		doSendMagicEffect(getCreaturePosition(cid), CONST_ME_TELEPORT)
 	end
-
+	
 	registerCreatureEvent(cid, "Mail")
 	registerCreatureEvent(cid, "GuildMotd")
 
@@ -51,7 +59,7 @@ function onLogin(cid)
 
 	registerCreatureEvent(cid, "ReportBug")
 	registerCreatureEvent(cid, "AdvanceSave")
-	registerCreatureEvent(cid, "healonlevelup")
+	--registerCreatureEvent(cid, "healonlevelup")
 
 	return true
 end

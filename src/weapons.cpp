@@ -660,10 +660,9 @@ WeaponDistance::WeaponDistance(LuaInterface* _interface):
 	swing = params.blockedByShield = false;
 }
 
-//hit change of distance weapons
-//Oct 25, 2022: setting maxHitChance to 80% for both types of weapons
 bool WeaponDistance::configureWeapon(const ItemType& it)
 {
+	//hit percentage chance for distance weapons
 	if(it.ammoType != AMMO_NONE)
 		maxHitChance = 80;
 	else

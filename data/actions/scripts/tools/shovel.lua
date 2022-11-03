@@ -12,7 +12,6 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	elseif(SAND_HOLES[itemEx.itemid] ~= nil) then
 		doSendMagicEffect(toPosition, CONST_ME_POFF)
 		doTransformItem(itemEx.uid, SAND_HOLES[itemEx.itemid])
-
 		doDecayItem(itemEx.uid)
 		return true
 	elseif(itemEx.itemid == SAND and not isRookie(cid)) then

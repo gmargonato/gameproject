@@ -4,21 +4,18 @@
 
 	<!-- Quests -->
 	<action actionid="1001" event="script" value="other/create_monster.lua"/>
-
 	<action uniqueid="5001" event="script" value="quests/annihilator.lua"/>
 
 	<!-- Tools -->
-	<action itemid="2420" 	event="script" value="tools/machete.lua"/>
-	<action itemid="2442" 	event="script" value="tools/machete.lua"/>
-	<action itemid="2550" 	event="script" value="tools/scythe.lua"/>
-	<action itemid="2580" 	event="script" value="tools/fishing.lua" allowfaruse="1"/>
+	<action itemid="2550"  	event="script" value="tools/scythe.lua"/>
+	<action itemid="2580"  	event="script" value="tools/fishing.lua" allowfaruse="1"/>
 	<action itemid="10223" 	event="script" value="tools/fishing.lua" allowfaruse="1"/>
-	<action itemid="2554" 	event="script" value="tools/shovel.lua"/>
-	<action itemid="5710" 	event="script" value="tools/shovel.lua"/>
-	<action itemid="2120" 	event="script" value="tools/rope.lua"/>
-	<action itemid="7731" 	event="script" value="tools/rope.lua"/>
-	<action itemid="2553" 	event="script" value="tools/pick.lua"/>
+	<action itemid="2553"  	event="script" value="tools/pick.lua"/>
+	<action itemid="2420;2442" event="script" value="tools/machete.lua"/>
+	<action itemid="2554;5710" event="script" value="tools/shovel.lua"/>
+	<action itemid="2120;7731" event="script" value="tools/rope.lua"/>
 	<action itemid="5908;5942" event="script" value="tools/skinning.lua"/>
+	<action itemid="384;418;8278;8592" event="script" value="tools/rope.lua"/>
 
 	<!-- Liquids -->
 	<action itemid="1775" event="script" value="liquids/containers.lua"/>
@@ -359,7 +356,6 @@
 	<action itemid="8110" event="script" value="other/present.lua"/>
 	<action itemid="7735" event="script" value="other/spellwand.lua"/>
 	<action itemid="7537" script="other/spideregg.lua" />
-	<action itemid="384" event="script" value="other/climb_rope_spot.lua"/>
 
 	<!-- Exercise Weapons -->
 	<action fromid="12559" toid="12563" event="script" value="other/online_training.lua"/>

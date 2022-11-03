@@ -650,6 +650,7 @@ class LuaInterface
 		static int32_t luaDoSetGameState(lua_State* L);
 		static int32_t luaGetChannelUsers(lua_State* L);
 		static int32_t luaGetPlayersOnline(lua_State* L);
+		static int32_t luaDoPlayerOpenChannel(lua_State* L);
 		static int32_t luaDoExecuteRaid(lua_State* L);
 		static int32_t luaDoReloadInfo(lua_State* L);
 		static int32_t luaDoSaveServer(lua_State* L);

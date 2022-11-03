@@ -3541,7 +3541,7 @@ bool Game::playerLookAt(uint32_t playerId, const Position& pos, uint16_t spriteI
 	}
 
 	if(player->hasCustomFlag(PlayerCustomFlag_CanSeePosition))
-		ss << std::endl << "Position: [X: " << thingPos.x << "] [Y: " << thingPos.y << "] [Z: " << thingPos.z << "].";
+		ss << std::endl << "Position: x: " << thingPos.x << ", y: " << thingPos.y << ", z: " << thingPos.z;
 
 	player->sendTextMessage(MSG_INFO_DESCR, ss.str());
 	return true;
@@ -3786,6 +3786,7 @@ bool Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type, c
 
 	uint32_t muted = 0;
 	bool mute = player->isMuted(channelId, type, muted);
+	
 	if(muted && mute)
 	{
 		char buffer[75];
@@ -3793,7 +3794,7 @@ bool Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type, c
 		player->sendTextMessage(MSG_STATUS_SMALL, buffer);
 		return false;
 	}
-
+	
 	std::string _text = asLowerCaseString(text);
 	for(uint8_t i = 0; i < _text.length(); i++)
 	{
@@ -3917,13 +3918,13 @@ bool Game::playerYell(Player* player, const std::string& text)
 		player->sendCancelMessage(RET_YOUAREEXHAUSTED);
 		return true;
 	}
-
+	
 	if(!player->hasFlag(PlayerFlag_CannotBeMuted))
 	{
 		if(Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_MUTED, 30000, 0, false, 1))
 			player->addCondition(condition);
 	}
-
+	
 	internalCreatureSay(player, SPEAK_YELL, asUpperCaseString(text), false);
 	return true;
 }
@@ -4433,7 +4434,7 @@ bool Game::combatChangeHealth(CombatType_t combatType, Creature* attacker, Creat
 			(g_config.getBool(ConfigManager::SHOW_HEALING_DAMAGE_MONSTER) || !target->getMonster()))
 		{
 			char buffer[20];
-			sprintf(buffer, "+%d", healthChange);
+			sprintf(buffer, "%d", healthChange);
 
 			const SpectatorVec& list = getSpectators(targetPos);
 			if(combatType != COMBAT_HEALING)
@@ -4647,7 +4648,7 @@ bool Game::combatChangeMana(Creature* attacker, Creature* target, int32_t manaCh
 			(g_config.getBool(ConfigManager::SHOW_HEALING_DAMAGE_MONSTER) || !target->getMonster()))
 		{
 			char buffer[20];
-			sprintf(buffer, "+%d", manaChange);
+			sprintf(buffer, "%d", manaChange);
 
 			const SpectatorVec& list = getSpectators(targetPos);
 			addAnimatedText(list, targetPos, g_config.getNumber(ConfigManager::MANA_HEALING_COLOR), buffer);
@@ -5224,7 +5225,7 @@ bool Game::playerViolationWindow(uint32_t playerId, std::string name, uint8_t re
 
 	toLowerCaseString(name);
 	Player* target = getPlayerByNameEx(name);
-	if(!target || name == "account manager")
+	if(!target || name == "New Soul")
 	{
 		player->sendCancel("A player with this name does not exist.");
 		return false;
@@ -6118,7 +6119,7 @@ bool Game::reloadInfo(ReloadInfo_t reload, uint32_t playerId/* = 0*/)
 			done = true;
 			break;
 		}
-
+		/*
 		case RELOAD_MODS:
 		{
 			if(ScriptManager::getInstance()->reloadMods())
@@ -6128,7 +6129,7 @@ bool Game::reloadInfo(ReloadInfo_t reload, uint32_t playerId/* = 0*/)
 
 			break;
 		}
-
+		*/
 		case RELOAD_MONSTERS:
 		{
 			if(g_monsters.reload())
@@ -6254,10 +6255,10 @@ bool Game::reloadInfo(ReloadInfo_t reload, uint32_t playerId/* = 0*/)
 			break;
 		}
 	}
-
+	/*
 	if(reload != RELOAD_MODS && !ScriptManager::getInstance()->reloadMods())
 		std::clog << "[Error - Game::reloadInfo] Failed to reload mods." << std::endl;
-
+	*/
 	if(!playerId)
 		return done;
 

@@ -52,7 +52,8 @@ local function exerciseDummyTrainEvent(params, weapon)
                 if weapon.shootDistEffect then doSendDistanceShoot(playerPosition, params.dummyPos, weapon.shootDistEffect) end
                 if weapon.shootEffect then doSendMagicEffect(params.dummyPos, weapon.shootEffect) end
                 if weapon.skillType == SKILL_MAGLEVEL then
-                    addManaSpent(params.cid, (skillSpent() * params.dummy.skillRate) * getConfigValue("rateMagic"))
+                    --addManaSpent(params.cid, (skillSpent() * params.dummy.skillRate) * getConfigValue("rateMagic"))
+			addManaSpent((skillSpent() * params.dummy.skillRate) * getConfigValue("rateMagic"))
                 else
                     doPlayerAddSkillTry(params.cid, weapon.skillType, (skillTries * params.dummy.skillRate) * getConfigValue("rateSkill"))
                 end

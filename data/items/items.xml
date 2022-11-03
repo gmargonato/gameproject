@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <items>
-	<!-- README:
-		We really appreciate if someone could help us
-		with getting real names and attributes
-		of missing items in this file
-
-		Most needed are the items (including floors, walls)
-		introduced in the most recent tibia updates
-		starting from 8.2 to 8.6
-
-		If you found something wrong with existing item(s), we're also waiting for you :)
-
-		You can send your work here: http://otland.net/project.php?projectid=2
-	-->
-
 	<item id="100" name="void" />
 	<item id="101" name="earth" />
 	<item id="103" name="dirt" />
@@ -1431,14 +1417,14 @@
 		<attribute key="containerSize" value="8" />
 		<attribute key="slotType" value="backpack" />
 	</item>
-	<item id="1993" article="a" name="red bag">
+	<item id="1993" article="a" name="blossom bag">
 		<attribute key="weight" value="800" />
-		<attribute key="containerSize" value="8" />
+		<attribute key="containerSize" value="30" />
 		<attribute key="slotType" value="backpack" />
 	</item>
-	<item id="1994" article="a" name="purple bag">
-		<attribute key="weight" value="800" />
-		<attribute key="containerSize" value="8" />
+	<item id="1994" article="a" name="gold pouch">
+		<attribute key="weight" value="800"/>
+		<attribute key="containerSize" value="30" />
 		<attribute key="slotType" value="backpack" />
 	</item>
 	<item id="1995" article="a" name="blue bag">
@@ -1461,7 +1447,7 @@
 		<attribute key="containerSize" value="20" />
 		<attribute key="slotType" value="backpack" />
 	</item>
-	<item id="1999" article="a" name="yellow backpack">
+	<item id="1999" article="a" name="buggy backpack">
 		<attribute key="weight" value="1800" />
 		<attribute key="containerSize" value="20" />
 		<attribute key="slotType" value="backpack" />
@@ -2075,21 +2061,21 @@
 		<attribute key="slotType" value="ring" />
 	</item>
 	<item id="2180" article="an" name="orb of nature" />
-	<item id="2181" article="a" name="terra rod">
+	<item id="2181" article="a" name="terra wand">
 		<attribute key="description" value="Small stones are flying from its tip." />
 		<attribute key="weight" value="2500" />
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="smallearth" />
 		<attribute key="range" value="3" />
 	</item>
-	<item id="2182" article="a" name="snakebite rod">
+	<item id="2182" article="a" name="snakebite wand">
 		<attribute key="description" value="It seems to twitch and quiver as if trying to escape your grip." />
 		<attribute key="weight" value="4300" />
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="smallearth" />
 		<attribute key="range" value="3" />
 	</item>
-	<item id="2183" article="a" name="hailstorm rod">
+	<item id="2183" article="a" name="hailstorm wand">
 		<attribute key="description" value="It grants you the power of striking your foes with furious hailstorms." />
 		<attribute key="weight" value="2700" />
 		<attribute key="weaponType" value="wand" />
@@ -2099,14 +2085,14 @@
 	<item id="2184" article="a" name="crystal wand">
 		<attribute key="weight" value="2800" />
 	</item>
-	<item id="2185" article="a" name="necrotic rod">
+	<item id="2185" article="a" name="necrotic wand">
 		<attribute key="description" value="It was brought up from hell to deliver death." />
 		<attribute key="weight" value="2300" />
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="death" />
 		<attribute key="range" value="3" />
 	</item>
-	<item id="2186" article="a" name="moonlight rod">
+	<item id="2186" article="a" name="moonlight wand">
 		<attribute key="description" value="Icecold rays of moonlight shimmer on its tip." />
 		<attribute key="weight" value="2100" />
 		<attribute key="weaponType" value="wand" />
@@ -2161,7 +2147,7 @@
 	<item id="2195" name="boots of haste">
 		<attribute key="weight" value="750" />
 		<attribute key="slotType" value="feet" />
-		<attribute key="speed" value="40" />
+		<attribute key="speed" value="50" />
 		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2196" article="a" name="broken amulet">
@@ -3422,11 +3408,12 @@
 		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="2453" article="an" name="arcane staff">
+		<attribute key="description" value="You can feel the arcane energy inside its core." />
 		<attribute key="weight" value="4000" />
-		<attribute key="defense" value="30" />
-		<attribute key="attack" value="50" />
-		<attribute key="weaponType" value="club" />
+		<attribute key="weaponType" value="wand" />
 		<attribute key="slotType" value="two-handed" />
+		<attribute key="shootType" value="energy" />
+		<attribute key="range" value="7" />
 	</item>
 	<item id="2454" article="a" name="war axe">
 		<attribute key="weight" value="6150" />
@@ -4172,9 +4159,15 @@
 		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="2641" article="a" name="pair of soulwalkers">
-		<attribute key="weight" value="900" />
-		<attribute key="armor" value="4" />
-		<attribute key="slotType" value="feet" />
+		<attribute key="weight" 	value="1300" />
+		<attribute key="armor" 		value="4" />
+		<attribute key="slotType" 	value="feet" />
+		<attribute key="skillSword" 	value="5" />
+		<attribute key="skillAxe" 	value="5" />
+		<attribute key="skillClub" 	value="5" />
+		<attribute key="absorbPercentPhysical" value="10" />
+		<attribute key="absorbPercentFire" value="5" />
+		<attribute key="speed" value="30" />
 	</item>
 	<item id="2642" name="sandals">
 		<attribute key="weight" value="600" />
@@ -7056,10 +7049,12 @@
 		<attribute key="defense" value="27" />
 		<attribute key="weaponType" value="shield" />
 	</item>
-	<item id="3974" article="a" name="sentinel shield">
-		<attribute key="weight" value="4900" />
-		<attribute key="defense" value="22" />
-		<attribute key="weaponType" value="shield" />
+	<item id="3974" article="a" name="alicorn headguard">
+		<attribute key="weight" value="3900" />
+		<attribute key="armor" value="11" />
+		<attribute key="slotType" value="head" />
+		<attribute key="absorbPercentPhysical" value="5" />
+		<attribute key="skillDist" value="3" />
 	</item>
 	<item id="3975" article="a" name="salamander shield">
 		<attribute key="weight" value="7200" />
@@ -8804,8 +8799,8 @@
 	<item id="5802" article="a" name="bottle with a message"> <!-- Not a real item -->
 		<attribute key="weight" value="2500" />
 	</item>
-	<item id="5803" article="an" name="arbalest">
-		<attribute key="description" value="It is a bit heavy due to the iron mounting, but very precise." />
+	<item id="5803" article="a" name="cobra crossbow">
+		<attribute key="description" value="Amazing how elastic a snake can be." />
 		<attribute key="weight" value="9500" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="slotType" value="two-handed" />
@@ -9022,9 +9017,9 @@
 	<item id="5925" article="a" name="hardened bone" plural="hardened bones">
 		<attribute key="weight" value="200" />
 	</item>
-	<item id="5926" article="a" name="pirate backpack">
+	<item id="5926" article="a" name="ghost backpack">
 		<attribute key="weight" value="1800" />
-		<attribute key="containerSize" value="20" />
+		<attribute key="containerSize" value="25" />
 		<attribute key="slotType" value="backpack" />
 	</item>
 	<item id="5927" article="a" name="pirate bag">
@@ -12422,10 +12417,11 @@
 		<attribute key="slotType" value="head" />
 		<attribute key="absorbPercentIce" value="2" />
 	</item>
-	<item id="7460" article="a" name="norse shield">
+	<item id="7460" article="a" name="eldritch shield">
 		<attribute key="weight" value="4100" />
 		<attribute key="defense" value="28" />
 		<attribute key="weaponType" value="shield" />
+		<attribute key="absorbPercentIce" value="15" />
 	</item>
 	<item id="7461" article="a" name="krimhorn helmet">
 		<attribute key="weight" value="5100" />
@@ -12576,19 +12572,19 @@
 	</item>
 	<item id="7588" article="a" name="strong health potion">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="This potion can only be consumed by paladins and knights of level 50 or higher." />
+		<attribute key="description" value="This potion can only be consumed by players of level 20 or higher." />
 	</item>
 	<item id="7589" article="a" name="strong mana potion">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="This potion can only be consumed by sorcerers, druids and paladins of level 50 or higher." />
+		<attribute key="description" value="This potion can only be consumed by players of level 50 or higher." />
 	</item>
 	<item id="7590" article="a" name="great mana potion">
 		<attribute key="weight" value="220" />
-		<attribute key="description" value="This potion can only be consumed by sorcerers and druids of level 80 or higher." />
+		<attribute key="description" value="This potion can only be consumed by players of level 80 or higher." />
 	</item>
 	<item id="7591" article="a" name="great health potion">
 		<attribute key="weight" value="220" />
-		<attribute key="description" value="This potion can only be consumed by knights of level 80 or higher." />
+		<attribute key="description" value="This potion can only be consumed by players of level 80 or higher." />
 	</item>
 	<item fromid="7592" toid="7617" article="a" name="tent" />
 	<item id="7618" article="a" name="health potion">
@@ -14443,11 +14439,11 @@
 	<item fromid="8460" toid="8471" name="earth" />
 	<item id="8472" article="a" name="great spirit potion">
 		<attribute key="weight" value="220" />
-		<attribute key="description" value="This potion can only be consumed by paladins of level 80 or higher." />
+		<attribute key="description" value="This potion can only be consumed by players of level 100 or higher." />
 	</item>
 	<item id="8473" article="an" name="ultimate health potion">
 		<attribute key="weight" value="220" />
-		<attribute key="description" value="This potion can only be consumed by knights of level 130 or higher." />
+		<attribute key="description" value="This potion can only be consumed by players of level 100 or higher." />
 	</item>
 	<item id="8474" article="an" name="antidote potion">
 		<attribute key="weight" value="175" />
@@ -14857,7 +14853,7 @@
 		<attribute key="range" value="5" />
 		<attribute key="attack" value="4" />
 	</item>
-	<item id="8854" article="a" name="warsinger bow">
+	<item id="8854" article="an" name="umbral master bow">
 		<attribute key="weight" value="4500" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="weaponType" value="distance" />
@@ -14899,7 +14895,7 @@
 		<attribute key="range" value="6" />
 		<attribute key="hitChance" value="3" />
 	</item>
-	<item id="8858" article="a" name="elethriel's elemental bow">
+	<item id="8858" article="an" name="eldritch bow">
 		<attribute key="weight" value="4400" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="weaponType" value="distance" />
@@ -15040,7 +15036,7 @@
 		<attribute key="skillClub" value="2" />
 		<attribute key="slotType" value="body" />
 	</item>
-	<item id="8884" article="an" name="oceanborn leviathan armor">
+	<item id="8884" article="a" name="lion plate">
 		<attribute key="weight" value="10000" />
 		<attribute key="armor" value="15" />
 		<attribute key="absorbPercentIce" value="5" />
@@ -15181,19 +15177,19 @@
 		<attribute key="manaGain" value="4" />
 		<attribute key="manaTicks" value="3000" />
 	</item>
-	<item id="8910" article="an" name="underworld rod">
+	<item id="8910" article="an" name="underworld wand">
 		<attribute key="weight" value="2900" />
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="death" />
 		<attribute key="range" value="3" />
 	</item>
-	<item id="8911" article="a" name="northwind rod">
+	<item id="8911" article="a" name="northwind wand">
 		<attribute key="weight" value="2900" />
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="ice" />
 		<attribute key="range" value="3" />
 	</item>
-	<item id="8912" article="a" name="springsprout rod">
+	<item id="8912" article="a" name="springsprout wand">
 		<attribute key="weight" value="2700" />
 		<attribute key="weaponType" value="wand" />
 		<attribute key="shootType" value="earth" />
@@ -17431,7 +17427,7 @@
 	</item>
 	<item id="11241" article="a" name="feed backpack">
 		<attribute key="weight" value="1800"/>
-		<attribute key="containerSize" value="20"/>
+		<attribute key="containerSize" value="25"/>
 		<attribute key="slotType" value="backpack"/>
 	</item>
 	<item id="11242" article="a" name="expedition bag">
@@ -17441,7 +17437,7 @@
 	</item>
 	<item id="11243" article="a" name="book backpack">
 		<attribute key="weight" value="1700"/>
-		<attribute key="containerSize" value="22"/>
+		<attribute key="containerSize" value="25"/>
 		<attribute key="slotType" value="backpack"/>
 	</item>
 	<item id="11244" article="a" name="minotaur backpack">

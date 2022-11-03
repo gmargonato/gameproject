@@ -1831,6 +1831,7 @@ void Player::addMessageBuffer()
 
 void Player::removeMessageBuffer()
 {
+
 	if(isAccountManager())
 		return;
 
@@ -1854,6 +1855,7 @@ void Player::removeMessageBuffer()
 	char buffer[50];
 	sprintf(buffer, "You are muted for %d seconds.", muteTime);
 	sendTextMessage(MSG_STATUS_SMALL, buffer);
+
 }
 
 void Player::drainHealth(Creature* attacker, CombatType_t combatType, int32_t damage)
@@ -2012,7 +2014,10 @@ void Player::addExperience(uint64_t exp)
 			party->updateSharedExperience();
 
 		char advMsg[60];
-		sprintf(advMsg, "You advanced from Level %d to Level %d.", prevLevel, level);		
+		sprintf(advMsg, "You advanced from Level %d to Level %d.", prevLevel, level);
+		//heal player's life and mana
+		Player::changeHealth(Player::getMaxHealth());
+		Player::changeMana(Player::getMaxMana());
 		sendTextMessage(MSG_EVENT_ADVANCE, advMsg);
 
 		CreatureEventList advanceEvents = getCreatureEvents(CREATURE_EVENT_ADVANCE);

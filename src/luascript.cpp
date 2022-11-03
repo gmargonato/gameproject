@@ -2416,6 +2416,9 @@ void LuaInterface::registerFunctions()
 	//doSetGameState(id)
 	lua_register(m_luaState, "doSetGameState", LuaInterface::luaDoSetGameState);
 
+	//doPlayerOpenChannel(cid, channelId)
+    lua_register(m_luaState, "doPlayerOpenChannel", LuaInterface::luaDoPlayerOpenChannel);
+
 	//doExecuteRaid(name)
 	lua_register(m_luaState, "doExecuteRaid", LuaInterface::luaDoExecuteRaid);
 
@@ -9624,6 +9627,25 @@ int32_t LuaInterface::luaDoCreatureExecuteTalkAction(lua_State* L)
 	}
 
 	return 1;
+}
+
+int32_t LuaInterface::luaDoPlayerOpenChannel(lua_State* L)
+{
+    //doPlayerOpenChannel(cid, channelId)
+    ScriptEnviroment* env = getEnv();
+    uint16_t channelId = popNumber(L);
+    uint32_t cid = popNumber(L);
+
+    Player* player = env->getPlayerByUID(cid);
+    if(player)
+        lua_pushnumber(L, g_game.playerOpenChannel(cid, channelId) ? true : false);
+    else
+    {
+        errorEx(getError(LUA_ERROR_PLAYER_NOT_FOUND));
+        lua_pushboolean(L, false);
+    }
+
+    return 1;
 }
 
 int32_t LuaInterface::luaDoExecuteRaid(lua_State* L)
