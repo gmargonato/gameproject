@@ -308,8 +308,9 @@ AccessHouseLevel_t House::getHouseAccessLevel(const Player* player)
 	if(player->hasFlag(PlayerFlag_CanEditHouses))
 		return HOUSE_OWNER;
 
+	//if no owner, allows everybody in
 	if(!owner)
-		return HOUSE_NO_INVITED;
+		return HOUSE_GUEST;
 
 	if(isGuild())
 	{
