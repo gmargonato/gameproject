@@ -485,11 +485,6 @@
 
 	<!-- Barbarian Spells -->
 
-	<instant name="Wound Cleansing" words="utura" lvl="5" life="0" prem="1" selftarget="1" aggressive="0" exhaustion="1000" needlearn="0" event="script" value="healing/recovery.lua">
-		<vocation id="4"/>
-		<vocation id="8"/>
-	</instant>
-
 	<instant name="Wound Cleansing" words="exura ico" lvl="10" life="0" prem="1" selftarget="1" aggressive="0" exhaustion="1000" needlearn="0" event="script" value="healing/wound cleasing.lua">
 		<vocation id="4"/>
 		<vocation id="8"/>

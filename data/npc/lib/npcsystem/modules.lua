@@ -175,7 +175,7 @@ if(Modules == nil) then
 		elseif(not doPlayerRemoveMoney(cid, parameters.cost)) then
 			npcHandler:say('You do not have enough money.', cid)
 		else
-			npcHandler:say('It was a pleasure doing business with you.', cid)
+			npcHandler:say('Bye.', cid)
 			npcHandler:releaseFocus(cid)
 
 			doTeleportThing(cid, parameters.destination, false)
@@ -183,6 +183,54 @@ if(Modules == nil) then
 		end
 
 		npcHandler:resetNpc()
+		return true
+	end
+
+	-- VoiceModule
+	VoiceModule = {
+		voices = nil,
+		voiceCount = 0,
+		lastVoice = 0,
+		timeout = nil,
+		chance = nil,
+		npcHandler = nil
+	}
+
+	-- Creates a new instance of VoiceModule
+	function VoiceModule:new(voices, timeout, chance)
+		local obj = {}
+		setmetatable(obj, self)
+		self.__index = self
+
+		obj.voices = voices
+		for i = 1, #obj.voices do
+			local voice = obj.voices[i]
+			if voice.yell then
+				voice.yell = nil
+				voice.talktype = TALKTYPE_YELL
+			else
+				voice.talktype = TALKTYPE_SAY
+			end
+		end
+
+		obj.voiceCount = #voices
+		obj.timeout = timeout or 10
+		obj.chance = chance or 25
+		return obj
+	end
+
+	function VoiceModule:init(handler)
+		return true
+	end
+
+	function VoiceModule:callbackOnThink()
+		if self.lastVoice < os.time() then
+			self.lastVoice = os.time() + self.timeout
+			if math.random(100) < self.chance  then
+				local voice = self.voices[math.random(self.voiceCount)]
+				Npc():say(voice.text, voice.talktype)
+			end
+		end
 		return true
 	end
 

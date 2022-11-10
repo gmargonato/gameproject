@@ -5,7 +5,7 @@ local cfg = {
 }
 
 function onAdvance(cid, skill, oldLevel, newLevel)
-	if (getPlayerLevel(cid) > 1) then
+	if skill == SKILL_LEVEL then
 		doCreatureAddHealth(cid, getCreatureMaxHealth(cid))
 		doCreatureAddMana(cid, getCreatureMaxMana(cid))
 	end

@@ -205,7 +205,7 @@ std::string Player::getDescription(int32_t lookDistance) const
 		else if(vocationId != 0)
 			s << " You are " << vocation->getDescription();
 		else
-			s << " You have no vocation";
+			s << " You have no vocation yet";
 	}
 	else
 	{
@@ -219,7 +219,7 @@ std::string Player::getDescription(int32_t lookDistance) const
 		else if(vocationId != 0)
 			s << " is " << vocation->getDescription();
 		else
-			s << " has no vocation";
+			s << " has no vocation yet";
 
 		s << getSpecialDescription();
 	}
