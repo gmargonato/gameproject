@@ -641,9 +641,9 @@ void Player::addSkillAdvance(skills_t skill, uint32_t count, bool useMultiplier/
 		count -= nextReqTries - skills[skill][SKILL_TRIES];
 	 	skills[skill][SKILL_TRIES] = skills[skill][SKILL_PERCENT] = 0;
 
-		//skill level cap 100
-		if(skills[skill][SKILL_LEVEL] >= 100)
-			return;
+		//Skill Cap: 100
+		//if(skills[skill][SKILL_LEVEL] >= 100)
+		//	return;
 
 		skills[skill][SKILL_LEVEL]++;
 

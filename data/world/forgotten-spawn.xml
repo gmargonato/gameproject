@@ -9,11 +9,11 @@
 	<spawn centerx="109" centery="20" centerz="4" radius="1">
 		<npc name="Hela4" x="0" y="0" z="4" spawntime="60" />
 	</spawn>
-	<spawn centerx="125" centery="17" centerz="5" radius="1">
-		<npc name="Hela5" x="0" y="0" z="5" spawntime="60" />
-	</spawn>
 	<spawn centerx="54" centery="18" centerz="5" radius="1">
 		<npc name="Hela1" x="0" y="-1" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="126" centery="18" centerz="5" radius="1">
+		<npc name="Hela5" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
 	<spawn centerx="58" centery="16" centerz="7" radius="5">
 		<monster name="Wisp" x="0" y="-3" z="7" spawntime="60" />

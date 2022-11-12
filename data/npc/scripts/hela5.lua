@@ -3,7 +3,7 @@ local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
 function onCreatureAppear(cid)       
-    selfTurn(SOUTH)     
+    selfTurn(EAST)     
     npcHandler:onCreatureAppear(cid)            
 end
 
